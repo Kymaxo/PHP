@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <title>Formulaire de contact</title>
+</head>
+
+<body class="container-fluid">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <h1 class="text-center">Formulaire de contact</h1>
+            <form method="POST" action="traitement_formulaire_contact.php">
+                <div class="form-group">
+                    <label for="nom">Nom</label>
+                    <input text="text" id="nom" name="nom" class="form-control">
+                </div>
+                <div class="form-check mb-2">
+                    <input type="checkbox" name="accepter" id="accepter" class="form-check-input">
+                    <label class="form-check-label" for="accepter">J'accepte tout ce que vous voulez</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input type="checkbox" id="java" name="competence[]" value="java" class="form-check-input">
+                    <label class="form-check-label" for="java">Java</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input type="checkbox" id="php" name="competence[]" value="php" class="form-check-input">
+                    <label class="form-check-label" for="php">PHP</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input type="checkbox" id="python" name="competence[]" value="python" class="form-check-input">
+                    <label class="form-check-label" for="python">Python</label>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-block">Envoyer</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
