@@ -1,3 +1,7 @@
+<?php
+    require ("lib/html.php");
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -13,7 +17,13 @@
         $nombre2 = filter_input(INPUT_GET, "nombre2", FILTER_SANITIZE_NUMBER_INT) ?? 5;
         $result = $nombre1 * $nombre2;
     ?>
+    
+    <?php 
+        echo htmlTag("p", "test de la fonction htmlTag");
+    ?>
+
     <p>Le produit de <?=$nombre1?> par <?=$nombre2?> est <?=$result?> </p>
+
 
     <table class="table">
         <?php for ($i = 1; $i <= 10; $i++): ?>
