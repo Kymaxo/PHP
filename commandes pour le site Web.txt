@@ -1,0 +1,46 @@
+Dans le dossier Racine du projet
+
+- Créer un fichier .yarnrc
+- Ajouter la ligne suivante dans le fichier .yarnrc
+(" --modules-folder www/yarn-assets")
+- Depuis le dossier racine, lancer la commande: yarn install
+- Supprimer le dossier ("node_modules")
+- Ajouter le texte suivant: dans .gitignore
+("/www/yarn-assets)
+- créer un dossier controleur
+- copier tous les fichiers dans le dossier controleur
+- creer un fichier app.php dans le dossier www
+- copier le fichier "bonjour.html" dans le dossier vues
+- Dans le fichier app.php faire ceci:
+
+<?php
+	//Constantes de l'application    
+define("ROOT_PATH", dirname(__DIR__));
+define("VIEW_PATH", ROOT_PATH . "/vues");
+define("CONTROLER_PATH", ROOT_PATH . "/controleurs");
+
+// Récupération de la route passée en paramètre
+$route = filter_input(INPUT_GET, "route") ?? "default";
+
+echo $routes = [
+    "test"      => "controleur.php",
+    "contact"   => "formulaire.html",
+    "login"     => "login.php",
+    "logout"    => "logout.php",
+    "produit"   => "produit.php",
+    "intro"     => "intro.php",
+];
+
+if(array_key_exists($route, $routes)) {
+    $controler = $routes[$route];
+} else {
+    $controller = "404.html";
+}
+// Inclusion du controleur
+
+require CONTROLER_PATH . "/${routes[$route]}.php";
+?>
+Lancement du serveur
+cd www
+php -S localhost.8000
+
